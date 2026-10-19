@@ -1,0 +1,427 @@
+
+/* =========================
+   ALLGEMEINE EINSTELLUNGEN
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   KOPFBEREICH
+   ========================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 22px 15px;
+    background: #ffffff;
+    border-bottom: 1px solid #cccccc;
+}
+
+.PEUGEOT-SILHOUETTE {
+    display: block;
+    width: 115px;
+    height: auto;
+    object-fit: contain;
+    margin-left: 2px;
+}
+
+
+/* =========================
+   KONTAKT-ICONS
+   ========================= */
+
+.kontakt-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 22px;
+    margin: 0;
+}
+
+.kontakt-icons a {
+    display: block;
+    line-height: 0;
+}
+
+.kontakt-icons .Anruf-ICON {
+    display: block;
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.kontakt-icons a:hover .Anruf-ICON {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   BILDER-SLIDER
+   ALLE BILDER GLEICH GROSS
+   ========================= */
+
+.subbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 35px 15px;
+    background: #ffffff;
+}
+
+.slider-bereich {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Einheitlicher Bilderrahmen */
+#slider-bild {
+    display: block;
+
+    width: 100%;
+    max-width: 800px;
+
+    height: 500px;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+    user-select: none;
+    touch-action: pan-y;
+}
+
+#bild-zaehler {
+    margin-top: 14px;
+    font-size: 15px;
+    color: #777777;
+}
+
+
+/* =========================
+   FAHRZEUGDATEN
+   ========================= */
+
+.fahrzeugdaten {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 25px auto;
+    padding: 30px 0;
+
+    background: #ffffff;
+    border-top: 1px solid #cccccc;
+}
+
+.datenpunkt {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 20px;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+
+    background: #ffffff;
+    min-width: 0;
+
+    transition: box-shadow 0.2s ease;
+}
+
+.datenpunkt:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+
+/* Fahrzeugdaten-Icons */
+
+.daten-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 12px;
+    background: #f3f3f3;
+
+    font-size: 25px;
+}
+
+
+/* Fahrzeugdaten-Texte */
+
+.datenpunkt p {
+    margin: 0 0 7px;
+    color: #777777;
+    font-size: 15px;
+}
+
+.datenpunkt h3 {
+    margin: 0;
+    color: #222222;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+}
+
+
+/* Verkaufspreis */
+
+.datenpunkt.preis {
+    grid-column: 1 / -1;
+    background: #f8f8f8;
+}
+
+.datenpunkt.preis h3 {
+    font-size: 29px;
+    color: #167444;
+}
+
+
+/* =========================
+   FAHRZEUGBESCHREIBUNG
+   ========================= */
+
+.fahrzeugbeschreibung {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 35px auto;
+    padding: 30px 0;
+
+    border-top: 1px solid #cccccc;
+    background: #ffffff;
+}
+
+.fahrzeugbeschreibung h2 {
+    margin: 0 0 22px;
+    color: #222222;
+    font-size: 28px;
+}
+
+.fahrzeugbeschreibung p {
+    margin: 0 0 18px;
+
+    color: #555555;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.fahrzeugbeschreibung p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   SMARTPHONE
+   BIS 600 PX
+   ========================= */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        padding: 0 10px;
+    }
+
+    /* Kopfbereich */
+
+    .topbar {
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .PEUGEOT-SILHOUETTE {
+        width: 80px;
+        margin-top: 15px;
+        margin-left: 2px;
+    }
+
+    /* Kontakt-Icons */
+
+    .kontakt-icons {
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .kontakt-icons .Anruf-ICON {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Bilder-Slider */
+
+    .subbar {
+        padding: 20px 0;
+    }
+
+    #slider-bild {
+        width: 100%;
+        max-width: 100%;
+        height: 300px;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+
+    #bild-zaehler {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    /* Fahrzeugdaten */
+
+    .fahrzeugdaten {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+
+        margin: 1px auto;
+        padding: 20px 0;
+    }
+
+    .datenpunkt {
+        gap: 12px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .daten-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        font-size: 22px;
+    }
+
+    .datenpunkt p {
+        margin-bottom: 5px;
+        font-size: 13px;
+    }
+
+    .datenpunkt h3 {
+        font-size: 16px;
+    }
+
+    .datenpunkt.preis {
+        grid-column: 1 / -1;
+    }
+
+    .datenpunkt.preis h3 {
+        font-size: 24px;
+    }
+
+    /* Fahrzeugbeschreibung */
+
+    .fahrzeugbeschreibung {
+        margin: 25px auto;
+        padding: 25px 0;
+    }
+
+    .fahrzeugbeschreibung h2 {
+        margin-bottom: 18px;
+        font-size: 22px;
+    }
+
+    .fahrzeugbeschreibung p {
+        margin-bottom: 15px;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+}
+
+
+/* =========================
+   KLEINE SMARTPHONES
+   BIS 500 PX
+   ========================= */
+
+@media screen and (max-width: 500px) {
+
+    /* Bilder bleiben gleich gross */
+
+    #slider-bild {
+        height: 260px;
+    }
+
+    /* Fahrzeugdaten kompakter */
+
+    .fahrzeugdaten {
+        gap: 8px;
+        padding: 10px 0;
+    }
+
+    .datenpunkt {
+        gap: 8px;
+        padding: 10px 8px;
+    }
+
+    .daten-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    .datenpunkt p {
+        font-size: 11px;
+    }
+
+    .datenpunkt h3 {
+        font-size: 13px;
+    }
+
+    .datenpunkt.preis h3 {
+        font-size: 21px;
+    }
+
+    /* Beschreibung kompakter */
+
+    .fahrzeugbeschreibung {
+        margin: 20px auto;
+        padding: 20px 0;
+    }
+
+    .fahrzeugbeschreibung h2 {
+        font-size: 20px;
+    }
+
+    .fahrzeugbeschreibung p {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================
+   GROSSE PC-BILDSCHIRME
+   AB 1400 PX
+   ========================= */
+
+@media screen and (min-width: 1400px) {
+
+    #slider-bild {
+        max-width: 900px;
+        height: 550px;
+    }
+}
